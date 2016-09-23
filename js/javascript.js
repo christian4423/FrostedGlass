@@ -69,20 +69,20 @@
 	      elementProp = {
 	    width: element.width(),
 	    height: element.height(),
-	    leftPos: element.position().left,
-	    topPos: element.position().top
+	    leftPos: element.offset().left,
+	    topPos: element.offset().top
 	  },
 	      blur = element.find('.image--blur'),
-	      mask = element.find('.contentContainer'),
-	      maskLeftPos = mask.position().left,
+	      mask = element.find('.mask'),
+	      maskLeftPos = mask.offset().left,
 	      difference = elementProp.leftPos - maskLeftPos;
 
 	  blur.css({
 	    left: difference + 'px',
-	    top: elementProp.topPos - 15 + 'px'
+	    top: elementProp.topPos - 15 + 'px',
+	    width: element.width()
 	  });
-	  blur.width(element.width());
-	}
+	};
 
 /***/ }
 /******/ ]);

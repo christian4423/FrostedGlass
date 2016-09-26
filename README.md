@@ -3,7 +3,7 @@ I know the newest nightly build of webkit has a backdrop filter option that will
 
 #To Run:
 
-1. Have open index.html in a browser with blur support
+1. Open 'index.html' in a browser with cssfilter blur support
 
 #To Develop:
 

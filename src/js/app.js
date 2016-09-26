@@ -1,26 +1,36 @@
 $(function(){
 frostedGlass();
+
   $(window).resize(function(){
     frostedGlass();
   });
 });
 
 function frostedGlass(){
-  let element = $('[data-action=init]'),
-  elementProp = {
-    width: element.width(),
-    height: element.height(),
-    leftPos: element.offset().left,
-    topPos: element.offset().top
-  },
-  blur = element.find('.image--blur'),
-  mask = element.find('.mask'),
-  maskLeftPos = mask.offset().left,
-  difference = elementProp.leftPos -  maskLeftPos;
+  var element = $('[data-action=frostedGlassInit]');
+  var len = element.length;
+  for(let i=0; i<len; i++){
+    var obj = $(element[i]);
+    var objProp = {
+      width: obj.width(),
+      height: obj.height(),
+      leftPos: obj.offset().left,
+      topPos: obj.offset().top
+    },
+    imageSrc = obj.data('imagesrc'),
+    blur = obj.find('.image--blur'),
+    mask = obj.find('.mask'),
+    maskLeftPos = mask.offset().left,
+    difference = objProp.leftPos -  maskLeftPos;
 
-  blur.css({
-    left: `${difference}px`,
-    top: `${elementProp.topPos - 15}px`,
-    width: element.width()
-  });
+    obj.css({
+      "background-image": `url('${imageSrc}')`
+    })
+    blur.css({
+      "background-image": `url('${imageSrc}')`,
+      left: `${difference}px`,
+      width: obj.width(),
+      height: obj.height()
+    });
+  };
 };

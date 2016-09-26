@@ -1,3 +1,5 @@
+$yellow: #fea93a;
+$yellowTrans: rgba(254, 169, 58, 0.5);
 
 .frostedGlass{
   //sizing
@@ -29,21 +31,53 @@
       position: absolute;
       top: 0;
       z-index: 3;
+
+      //modifyers
+      &--more{
+        filter: blur(20px);
+      }
+      &--less{
+        filter: blur(5px);
+      }
+
     }
+
+
+
   }
 
   .mask {
+      //styles
       background-color: rgba(127,127,127,0.2);
       box-shadow: 0 0 20px #000;
       overflow: hidden;
+
+      //sizing
       height: 100%;
       width: 50%;
       max-width: 600px;
+
+      //spacing
       padding: 15px;
+
+      //positioning
       position: absolute;
-      left: 10%;
+      left:0;
+      right:0;
+      margin:auto;
       z-index: 4;
 
+      //modifyers
+      &--left{
+        right:auto;
+        left: 10%;
+      }
+      &--right{
+        left:auto;
+        right:10%;
+      }
+
+      //media query - phone small
       @media(max-width:$screen-sm-max ){
         width: 80%;
         left:0;
@@ -52,16 +86,66 @@
         max-width: none;
       }
 
+
+
       .content{
-        position: relative;
-        z-index: 4;
+        //styles
         line-height: 25px;
-        text-align: justify;
-        padding: 0 5%;
         font-size: 1.5rem;
+        text-align: justify;
         overflow-y: auto;
+
+        h1,h2,h3,h4,h5,h6{
+          color:#fea93a;
+        }
+
+        ul{
+          color:$yellow;
+          li span{
+            color:#fff;
+          }
+        }
+
+        //sizing
         height:inherit;
 
+        //spacing
+        padding: 0 5%;
+
+        //positioning
+        position: relative;
+        z-index: 4;
+
+        //modifyers
+        &--textShadow{
+          text-shadow: 0 0 5px #000;
+        }
+
+        .cta{
+          //styles
+          text-align: center;
+          font-size: 3rem;
+          border:2px solid $yellow;
+          cursor: pointer;
+          background-color: $yellowTrans;
+          -webkit-user-select: none;
+          user-select: none;
+
+          //sizing
+          width:70%;
+
+          //spacing
+          padding:30px;
+          margin: 20px auto;
+
+          //modifyers
+          &:hover{
+            background-color: rgba(254, 169, 58, 0.8);
+          }
+          &:active{
+            background-color: rgba(254, 169, 58, 0.3);
+          }
+        }
       }
   }
 }

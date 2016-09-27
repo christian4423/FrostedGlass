@@ -1,5 +1,7 @@
 $yellow: #fea93a;
 $yellowTrans: rgba(254, 169, 58, 0.5);
+$blue: #319de0;
+$blueTrans: rgba(49, 157, 224, 0.5);
 
 .frostedGlass{
   //sizing
@@ -7,6 +9,52 @@ $yellowTrans: rgba(254, 169, 58, 0.5);
   height: 100vh;
   position:relative;
 
+    &--yellow{
+      .content{
+          h1,h2,h3,h4,h5,h6{
+            color:$yellow;
+          }
+          ul{
+            color:$yellow;
+            li span{
+              color:#fff;
+            }
+          }
+        .cta{
+          border:2px solid $yellow;
+          background-color: $yellowTrans;
+          &:hover{
+            background-color: rgba(254, 169, 58, 0.8);
+          }
+          &:active{
+            background-color: rgba(254, 169, 58, 0.3);
+          }
+        }
+    }
+    }
+    &--blue{
+      .content{
+          h1,h2,h3,h4,h5,h6{
+            color:$blue;
+          }
+          ul{
+            color:$blue;
+            li span{
+              color:#fff;
+            }
+          }
+        .cta{
+          border:2px solid $blue;
+          background-color: $blueTrans;
+          &:hover{
+            background-color: rgba(49, 157, 224, 0.3);
+          }
+          &:active{
+            background-color: rgba(49, 157, 224, 0.8);
+          }
+        }
+    }
+    }
   .image{
     //sizing
     width:100%;
@@ -92,16 +140,7 @@ $yellowTrans: rgba(254, 169, 58, 0.5);
         text-align: justify;
         overflow-y: auto;
 
-        h1,h2,h3,h4,h5,h6{
-          color:#fea93a;
-        }
 
-        ul{
-          color:$yellow;
-          li span{
-            color:#fff;
-          }
-        }
 
         //sizing
         height:inherit;
@@ -122,9 +161,7 @@ $yellowTrans: rgba(254, 169, 58, 0.5);
           //styles
           text-align: center;
           font-size: 3rem;
-          border:2px solid $yellow;
           cursor: pointer;
-          background-color: $yellowTrans;
           -webkit-user-select: none;
           user-select: none;
 
@@ -134,14 +171,6 @@ $yellowTrans: rgba(254, 169, 58, 0.5);
           //spacing
           padding:30px;
           margin: 20px auto;
-
-          //modifyers
-          &:hover{
-            background-color: rgba(254, 169, 58, 0.8);
-          }
-          &:active{
-            background-color: rgba(254, 169, 58, 0.3);
-          }
         }
       }
   }
